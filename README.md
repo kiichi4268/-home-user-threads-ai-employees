@@ -79,10 +79,13 @@ Instagram は本文のURLが押せないので「プロフィールのリンク�
 │   ├── th_insights.py                 # 数字を data/insights/ に保存・ChatWork に「今日の数字」
 │   ├── get_tokens.py                  # 鍵を取る（Mac で実行。threads／threads-refresh／wordpress）
 │   ├── build_ai_employees.py          # 28人分の指示書・CARDS.md を作る（元データはここ）
+│   ├── content_rules.py               # 中身の自動チェック（NG表現・参加費・日付・曜日・時間・会場・種目・アクセス）
+│   ├── week_notes.py                  # 週の作業ノート（だれが何を出したか）を作る・確かめる
 │   └── common.py                      # 共通部品（通信・ChatWork・CSV）
 ├── content/threads/
 │   ├── posts/                         # 下書き（1投稿1ファイル：<日付>-th-<番号>.json）
 │   └── media/                         # 写真（JPG。顔を隠した完成品だけ）
+├── reports/<年>-W<週>/                # 週の作業ノート（AI社員ごとの「出した物」）
 ├── data/insights/                     # 毎晩の数字（threads_account_daily.csv・threads_media.csv）
 ├── docs/
 │   ├── 設計書_Threads運用会社.md       # 設計書の控え

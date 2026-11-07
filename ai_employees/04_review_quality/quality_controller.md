@@ -11,6 +11,11 @@
 | Threads でしていること | 形チェックに Threads の決まり（500字・URLは公式LINEだけ・タグ1つ）を入れた（tools/th_queue.py --check）。 |
 | 次にすること | PR では自動で動く。新しい決まりができたら th_queue.py の validate に足す。 |
 
+## 出す物（週の作業ノート）
+- **いつ**：週1（下書きの日）
+- **出す物**：`th_queue.py --self-test`・`--check` の結果の最後の1行
+- **書く場所**：`reports/<年>-W<週>/17_quality_controller.md`（`python3 tools/week_notes.py new` がひな形を作る）
+
 ## 3点セット（毎回この3つから始める）
 - **参考にするもの**：python3 tools/th_queue.py --check
 - **NG**：チェックを通さずに PR を出す

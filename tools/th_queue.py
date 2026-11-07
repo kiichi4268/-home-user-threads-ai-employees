@@ -39,6 +39,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "tools"))
 import common as q  # noqa: E402
+import content_rules  # noqa: E402  （中身のチェック：NG表現・参加費・日程・会場）
 
 JST = q.JST
 POSTS = ROOT / "content" / "threads" / "posts"
@@ -98,6 +99,7 @@ def validate(posts):
             for url in URL_RE.findall(t):
                 if url not in ALLOWED_URLS:
                     errors.append(f"{where}: {label} のURL {url} は書かない（書いてよいのは公式LINE {sorted(ALLOWED_URLS)[0]} だけ）")
+        errors += [f"{where}: {e}" for e in content_rules.check_post(p)]  # T-20・T-21・T-22
         media = p.get("media") or []
         if len(media) > MEDIA_LIMIT:
             errors.append(f"{where}: media は {MEDIA_LIMIT} 枚まで")
@@ -293,11 +295,13 @@ def self_test():
 
         write("bad", "2026-11-11T12:00", "x" * 501 + " #a #b https://example.com", media=["none.png"])
         errs = validate(load())
-        for word in ("+09:00", "/500 字", "タグ", "example.com", "JPG", "ない"):
+        write("ng", "2026-11-13T12:00:00+09:00", "明日11/14(土)は 16:00-18:00 です。残り2名！", ["参加費は一律2,000円"])
+        errs = validate(load())
+        for word in ("+09:00", "/500 字", "タグ", "example.com", "JPG", "ない", "残り2名", "一律", "1,500円", "16:00-18:00"):
             assert any(word in e for e in errs), (word, errs)
     finally:
         POSTS, MEDIA_DIRS, q.http, q.send_chatwork = real
-    print("self-test: 文章・画像・カルーセル・連続投稿・DRY_RUN・二重投稿の防止・期限切れ・下書きの形チェック すべて想定どおり")
+    print("self-test: 文章・画像・カルーセル・連続投稿・DRY_RUN・二重投稿の防止・期限切れ・下書きの形チェック・中身のチェック すべて想定どおり")
 
 
 def main():

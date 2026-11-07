@@ -7,7 +7,7 @@ name: threads
 
 on:
   pull_request:
-    paths: ["content/threads/**", "tools/**", "ai_employees/**"]
+    paths: ["content/threads/**", "tools/**", "ai_employees/**", "docs/handover/**"]
   schedule:
     - cron: "5 23,0-14 * * *"  # UTC。日本時間 8:05〜23:05 の毎時
   workflow_dispatch:
@@ -35,7 +35,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: python3 tools/th_queue.py --self-test && python3 tools/th_queue.py --check && python3 tools/th_insights.py --self-test && python3 tools/build_ai_employees.py --check
+      - run: python3 tools/content_rules.py && python3 tools/week_notes.py --self-test && python3 tools/th_queue.py --self-test && python3 tools/th_queue.py --check && python3 tools/th_insights.py --self-test && python3 tools/build_ai_employees.py --check
 
   post:
     if: github.event_name == 'workflow_dispatch' || (github.event_name == 'schedule' && vars.TH_ENABLED == 'true')
