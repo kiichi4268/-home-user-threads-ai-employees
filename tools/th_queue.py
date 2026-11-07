@@ -317,6 +317,9 @@ def main():
         errors = validate(posts)
         for p in posts:
             print(f"・{p['scheduled_at'][:16].replace('T', ' ')} {1 + len(p.get('thread') or [])}投稿 {p['id']}")
+        notes = [f"{p['_file']}: {w}" for p in posts for w in content_rules.readability_post(p)]
+        if notes:
+            print("注意（止めない。字幕作成AI No.21 の読みやすさの目安）:\n" + "\n".join(notes))
         print("\n".join(errors) or f"OK: 下書き {len(posts)}件、形の問題なし")
         sys.exit(1 if errors else 0)
     q.load_env()

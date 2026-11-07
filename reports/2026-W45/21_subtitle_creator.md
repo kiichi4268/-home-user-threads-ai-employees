@@ -5,10 +5,10 @@
 - 指示書：`ai_employees/05_visual_production/subtitle_creator.md`
 
 ## 出した物
-（ここに書く）
+改行の読みやすさの注意を th_queue.py --check に追加（1行60字・空行のない長い塊）。下書き14本は注意0件（矢印の流れ図は除外）。
 
 ## 使った材料（ファイル名・数字の出どころ）
-（ここに書く）
+tools/content_rules.py の check_readability
 
 ## 次の人へ（1行。なければ「なし」）
-（ここに書く）
+60字は目安。実際のスマホで読んで、長すぎ・短すぎがあれば目安を直す。

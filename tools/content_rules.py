@@ -189,6 +189,31 @@ def check_facts(text, scheduled, events=None):
     return list(dict.fromkeys(errors))  # 同じ指摘は1回だけ
 
 
+LINE_SOFT_LIMIT = 60  # 1行の文字数の目安（スマホで3行ほどに折り返す長さ。目安なので止めずに知らせるだけ）
+
+
+def check_readability(text):
+    """T-35（字幕作成AI No.21）：スマホで読みやすい改行か。止めずに「注意」として知らせる。"""
+    warns = []
+    for line in text.splitlines():
+        body = re.sub(r"https?://\S+", "", line).strip()
+        if len(body) > LINE_SOFT_LIMIT:
+            warns.append(f"1行が{len(body)}字（目安{LINE_SOFT_LIMIT}字まで）：「{body[:20]}…」で改行を入れる")
+    blocks = [b for b in re.split(r"\n\s*\n", text) if b.strip()]
+    for b in blocks:
+        if len(b.splitlines()) > 8 and len(b) > 150:  # 矢印の流れ図のような短い行の並びは除く
+            warns.append(f"空行のない塊が{len(b.splitlines())}行：「{b.strip()[:15]}…」のどこかに空行を入れる")
+    return warns
+
+
+def readability_post(p):
+    out = []
+    for i, t in enumerate([p.get("text", "")] + list(p.get("thread") or [])):
+        label = "text" if i == 0 else f"thread[{i - 1}]"
+        out += [f"{label} の{w}" for w in check_readability(t)]
+    return out
+
+
 def check_post(p, events=None):
     """1つの下書きの本文すべて（text と thread）を確かめる。戻り値は「どこ：何が」のリスト。"""
     try:
@@ -228,6 +253,8 @@ def self_test():
     for text, word in bad.items():
         errs = check_facts(text, d, ev)
         assert any(word in e for e in errs), (text, errs)
+    assert check_readability("短い行\n" + "あ" * 61) and not check_readability("短い行\nhttps://lin.ee/WIbLPFV")
+    assert check_readability("\n".join(["長めの説明の行です" * 2] * 9)) and not check_readability("\n".join(["受付", "↓"] * 5))
     print("content_rules self-test OK")
 
 

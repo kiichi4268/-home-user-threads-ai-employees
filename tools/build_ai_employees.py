@@ -118,7 +118,7 @@ KITS = {
     22: ("縦動画のリール", "ぼかしていない動画", "―"),
     23: ("studio の読み上げとBGM（Instagram 運用会社）", "―", "―"),
     24: ("THREADS.md、tools/th_queue.py", "Merge 前に投稿する", "ChatWork の「投稿しました／失敗しました」"),
-    25: ("予約の時刻（PIPELINE.md）", "GitHub アクセスの回数を守らない（1日3回、困ったときだけ4回）", "下書きの予定日と PR の日"),
+    25: ("予約の時刻（PIPELINE.md）", "push の回数を守らない（1日2回まで。まとめて1回）", "下書きの予定日と PR の日"),
     26: ("data/insights/threads_media.csv の replies", "返信の本文・名前を公開リポジトリに残す", "返信数"),
     27: ("data/insights/threads_account_daily.csv・threads_media.csv", "数字のない結論", "閲覧 → 返信 → リンクのクリック → LINE 友だち"),
     28: ("PDCA.md、改善ログ", "改善を2つ以上同時にする", "前回の改善の判定日の数字"),
