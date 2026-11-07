@@ -18,7 +18,8 @@ Threads 運用会社のリポジトリです。Instagram 運用会社（`kiichi4
 1. **Meta のアプリに Threads の戻り先URLを登録する**
    - Meta for Developers ➔ アプリ ➔ ユースケース「Threads API にアクセス」➔ 設定 ➔ 「リダイレクトコールバックURL」に、たとえば `https://sportsbackstage1.wordpress.com/` を入れて保存
    - 権限は `threads_basic`・`threads_content_publish`・`threads_manage_insights` の3つを追加しておく
-   - ※以前「戻り先URLのエラー」で止まったのは、`http://localhost:8080/callback` を使ったためと考えられます（**推測**。Threads は https のURLしか登録できない、という前提）
+   - ※以前「戻り先URLのエラー」で止まったのは、`http://localhost:8080/callback` を使ったためと考えられます。Meta の Threads のサンプルの説明に「Threads のアプリは localhost の戻り先URLに対応しない」「https のみ」とあります（2026-11-07 に確認）
+   - **保存できない（「Form can't be saved」など）ときは**：アプリの「アプリの役割（Roles）」➔「Threads テスター」に自分の Threads アカウント（@macachette_sports）を追加 ➔ Threads のアプリの「設定 ➔ アカウント ➔ ウェブサイトのアクセス許可 ➔ 招待」で承認してから、もう一度保存する（同じ症状の報告と、この直し方の書き込みがある。画面の名前は変わっていることがある）
 2. **Mac で鍵を取る**（戻り先URLの既定は `https://sportsbackstage1.wordpress.com/`。1で別のURLを登録したときは、前に `OAUTH_REDIRECT_URI=そのURL ` を付けて実行する）
    先に `.env.example` を `.env` にコピーし、`THREADS_APP_ID`・`THREADS_APP_SECRET`（Meta のアプリの Threads の設定画面にある値）を入れておく。
    ```
@@ -57,6 +58,7 @@ Threads 運用会社のリポジトリです。Instagram 運用会社（`kiichi4
 | 写真 | JPG 0〜10枚（1投稿目に付く）。`content/threads/media/` に置く（Instagram 運用会社の完成品をコピーしてよい。顔を隠したものだけ）。動画は未対応 |
 | 本数 | 1日1〜2本（朝か昼）。型：問いかけ → 答え3つ → 次の開催 → LINE |
 | 中身 | CLAUDE.md の絶対ルールはすべて同じ。**次は自動で止まる**（`tools/content_rules.py`）：NG表現（残り人数・一律・出会いの連想・ガチ感・AIっぽい言い回し・割合での1人参加）／参加費が「1,500円」以外／日付・曜日・時間・会場・種目が「イベント状況」の控えと合わない／中止・満員の開催の告知／アクセス不明の会場に駅名 |
+| イベント状況の控え | 下書きを作る日に、事実確認AI（No.15）が「イベント状況」シートをコネクタで読み、控え CSV（`docs/handover/大元の配信先_イベント状況.csv`）と違えば書き直す。シートが読めないときは控えのまま作り、PR に「シート未照合」と書く |
 | 週の作業ノート | 下書きと一緒に `reports/<年>-W<週>/` を作る（`python3 tools/week_notes.py new <日付>`）。だれが何を出したかが残る |
 
 ## 5. 鍵の期限（60日）
