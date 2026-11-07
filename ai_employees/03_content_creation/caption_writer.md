@@ -11,6 +11,11 @@
 | Threads でしていること | 本文が主役。500字以内、ハッシュタグは1つ（トピック）。 |
 | 次にすること | Instagram のキャプションから作り直す。 |
 
+## 出す物（週の作業ノート）
+- **いつ**：週1（下書きの日）
+- **出す物**：下書きのファイル名の一覧（content/threads/posts/）
+- **書く場所**：`reports/<年>-W<週>/13_caption_writer.md`（`python3 tools/week_notes.py new` がひな形を作る）
+
 ## 3点セット（毎回この3つから始める）
 - **参考にするもの**：content/threads/posts/ の下書き
 - **NG**：500字超え・タグ2つ以上・URL（公式LINE以外）

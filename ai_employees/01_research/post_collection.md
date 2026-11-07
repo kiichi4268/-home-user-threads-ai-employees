@@ -11,6 +11,11 @@
 | Threads でしていること | 集め方は同じ（他人の投稿はAPIで集めない）。 |
 | 次にすること | Threads の参考も同じ所（docs/reference.md）に残す。 |
 
+## 出す物（週の作業ノート）
+- **いつ**：日曜（週次）
+- **出す物**：docs/reference.md に足した参考の型（週3つまで）
+- **書く場所**：`reports/<年>-W<週>/03_post_collection.md`（`python3 tools/week_notes.py new` がひな形を作る）
+
 ## 3点セット（毎回この3つから始める）
 - **参考にするもの**：docs/reference.md
 - **NG**：他人の投稿の本文をリポジトリに丸ごと貼る

@@ -11,6 +11,11 @@
 | Threads でしていること | 承認制の自動投稿を作成済み（tools/th_queue.py・.github/workflows/threads.yml）。鍵の登録待ち。 |
 | 次にすること | 鍵ができたら Variables の TH_ENABLED=true で動かす（THREADS.md「2.」）。 |
 
+## 出す物（週の作業ノート）
+- **いつ**：自動（GitHub Actions）
+- **出す物**：（自動）GitHub Actions の投稿結果。ChatWork の「投稿しました／失敗しました」を見る
+- **書く場所**：`reports/<年>-W<週>/24_posting_manager.md`（`python3 tools/week_notes.py new` がひな形を作る）
+
 ## 3点セット（毎回この3つから始める）
 - **参考にするもの**：THREADS.md、tools/th_queue.py
 - **NG**：Merge 前に投稿する
