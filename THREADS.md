@@ -22,7 +22,8 @@ Threads 運用会社のリポジトリです。Instagram 運用会社（`kiichi4
 2. **Mac で鍵を取る**（戻り先URLの既定は `https://sportsbackstage1.wordpress.com/`。1で別のURLを登録したときは、前に `OAUTH_REDIRECT_URI=そのURL ` を付けて実行する）
    先に `.env.example` を `.env` にコピーし、`THREADS_APP_ID`・`THREADS_APP_SECRET`（Meta のアプリの Threads の設定画面にある値）を入れておく。
    ```
-   cd ~/Desktop/threads-ai-employees && python3 tools/get_tokens.py threads
+   cd ~/Desktop/-home-user-threads-ai-employees-main && python3 tools/get_tokens.py threads
+   （フォルダ名は、GitHub から ZIP で落として Desktop に展開したときのもの。違う場所なら、そのフォルダに移動する）
    ```
    ブラウザで「許可」➔ 移動した先のアドレス欄のURLを丸ごとコピーして、ターミナルに貼って Enter。`.env` に `THREADS_ACCESS_TOKEN` と `THREADS_TOKEN_EXPIRES`（期限の日付）が入ります。
 3. **GitHub に登録する**（Settings ➔ Secrets and variables ➔ Actions）

@@ -1,5 +1,7 @@
 # 🧵 Macachette Sports × Threads 運用会社（AI社員28人）
 
+リポジトリ：[kiichi4268/-home-user-threads-ai-employees](https://github.com/kiichi4268/-home-user-threads-ai-employees)
+
 社会人スポーツサークル「マカシェットスポーツ」の **Threads（@macachette_sports）** を、28人のAI社員と GitHub Actions で回すためのリポジトリです。
 Instagram 運用会社（[kiichi4268/-ai_employees-](https://github.com/kiichi4268/-ai_employees-)）と同じ流れを、Threads 向けに作り直しています。
 
