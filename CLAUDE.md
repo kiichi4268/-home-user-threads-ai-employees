@@ -6,7 +6,7 @@
 
 ## 0. 作業の前に毎回読む
 
-1. このファイルと `THREADS.md`、`ai_employees/CARDS.md`・`PIPELINE.md`
+1. このファイルと `THREADS.md`、`TASKS.md`（足りないタスク）、`ai_employees/CARDS.md`・`PIPELINE.md`
 2. スプレッドシート「大元の配信先」（ID `19jGf5YypvpJOV8AtEpByoL6u5mPDGetQpLM-n6Kl53A`。Instagram 運用会社と共有）
    - **「加藤からの修正・決定」**：一番新しい決定。このファイルと違ったら、シートのほうが正しい。Threads の決定は「媒体：Threads」で記録する
    - **「イベント状況」**：日程・会場・人数。人が入力し、AIは読むだけ
