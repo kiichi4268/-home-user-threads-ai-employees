@@ -1,0 +1,55 @@
+# Threads の数字（インサイト）を毎晩取って data/insights/threads_*.csv に残し、鍵が生きているか・期限を確かめる（tools/th_insights.py）。
+# - 毎晩 23:50（日本時間）。Instagram 運用会社の ig_insights と同じ時刻。
+# - 鍵の期限（60日）は Variables の THREADS_TOKEN_EXPIRES で見張り、14日前から ChatWork に延長の手順を送る。
+# - 止めたいときは Variables の TH_INSIGHTS_ENABLED を消す（または false）。
+name: th_insights
+
+on:
+  schedule:
+    - cron: "50 14 * * *"  # UTC 14:50 = 日本時間 23:50
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "アカウントの数字を取り直す日数"
+        default: "3"
+      dry_run:
+        description: "1 = 保存・通知しない / 0 = 保存して ChatWork に送る"
+        default: "0"
+        type: choice
+        options: ["0", "1"]
+
+concurrency:
+  group: th_insights
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  insights:
+    if: github.event_name == 'workflow_dispatch' || vars.TH_INSIGHTS_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: read Threads insights
+        env:
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || '0' }}
+          THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+          THREADS_TOKEN_EXPIRES: ${{ vars.THREADS_TOKEN_EXPIRES }}
+          CHATWORK_API_TOKEN: ${{ secrets.CHATWORK_API_TOKEN }}
+          CHATWORK_ROOM_ID: ${{ vars.CHATWORK_ROOM_ID }}
+        run: python3 tools/th_insights.py --days "${{ github.event_name == 'workflow_dispatch' && inputs.days || '3' }}"
+      - name: save CSV to main
+        if: success()
+        run: |
+          git config user.name "th-insights-bot"
+          git config user.email "th-insights-bot@users.noreply.github.com"
+          git add data/insights/ 2>/dev/null || true
+          if git diff --cached --quiet; then echo "変更なし"; exit 0; fi
+          git commit -m "threads insights: $(TZ=Asia/Tokyo date +%Y-%m-%d)"
+          for i in 1 2 3; do git pull --rebase -q && git push -q && exit 0; sleep 5; done
+          echo "push に失敗"; exit 1
