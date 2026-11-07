@@ -5,6 +5,7 @@
 
 > 🔰 **最初に1回だけの設定（鍵の準備・テスト）は [THREADS.md](THREADS.md) の「2.」を上から順に。** はじめての人向けに書いてあります。
 > 🧵 **毎週の運用（承認制の自動投稿）も [THREADS.md](THREADS.md)。** 新しいチャットでは「`CLAUDE.md` と `THREADS.md` を読んで、続きをお願い」と伝えるだけで続きができます。
+> ✅ **足りないタスクの一覧は [TASKS.md](TASKS.md)。** 1つずつ埋めていく。
 > 📐 設計書（フロア図・28人）：https://claude.ai/artifact/8kPw5m7mFmE25CB8qqmuMG （控え [docs/設計書_Threads運用会社.md](docs/設計書_Threads運用会社.md)）
 
 「フロント拡散（**Threads**）」で毎日の会話から認知を取り、「クローズド教育（公式LINE ➔ 予約）」へ直接つなぐための、28人のAI社員の指示書と実行手順書です。
