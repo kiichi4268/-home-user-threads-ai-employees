@@ -23,8 +23,8 @@ Threads 運用会社のリポジトリです。Instagram 運用会社（`kiichi4
    先に `.env.example` を `.env` にコピーし、`THREADS_APP_ID`・`THREADS_APP_SECRET`（Meta のアプリの Threads の設定画面にある値）を入れておく。
    ```
    cd ~/Desktop/-home-user-threads-ai-employees-main && python3 tools/get_tokens.py threads
-   （フォルダ名は、GitHub から ZIP で落として Desktop に展開したときのもの。違う場所なら、そのフォルダに移動する）
    ```
+   フォルダ名は、GitHub から ZIP で落として Desktop に展開したときのもの。違う場所なら、そのフォルダに移動してから実行する。
    ブラウザで「許可」➔ 移動した先のアドレス欄のURLを丸ごとコピーして、ターミナルに貼って Enter。`.env` に `THREADS_ACCESS_TOKEN` と `THREADS_TOKEN_EXPIRES`（期限の日付）が入ります。
 3. **GitHub に登録する**（Settings ➔ Secrets and variables ➔ Actions）
    | 場所 | Name | 値 |
