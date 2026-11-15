@@ -2,7 +2,7 @@
 
 このファイルは「何を・どう作るか」のルールです。**Muse への受け渡し・公開までの手順は `NOTE.md`** を見てください。
 姉妹リポジトリ：Instagram 運用会社 `kiichi4268/-ai_employees-`（大元の流れ・日程・絶対ルールはそちらと同じ）。
-このリポジトリは Threads 運用会社として作り、2026-11-15 に note 運用会社へ作り替えた（Threads 版はタグ `threads-archive-2026-11-15`）。
+このリポジトリは Threads 運用会社として作り、2026-11-15 に note 運用会社へ作り替えた（Threads 版はコミット `2efcc0f`（2026-11-15 の main。GitHub で `kiichi4268/-home-user-threads-ai-employees/tree/2efcc0f` を開くと見られる））。
 運用マップ（1枚の図）：https://claude.ai/artifact/QsTjpmQ7Q3oiLrFjBYgQqf （控え `docs/設計書_note運用会社.md`）
 
 ## 0. 作業の前に毎回読む

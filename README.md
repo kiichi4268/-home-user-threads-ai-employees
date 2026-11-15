@@ -6,7 +6,7 @@
 > 🧭 **中身のルールは [CLAUDE.md](CLAUDE.md)、受け渡しと公開の手順は [NOTE.md](NOTE.md)。** 新しいチャットでは「`CLAUDE.md` と `NOTE.md` を読んで、続きをお願い」と伝えるだけで続きができます。
 > ✅ **足りないタスクは [TASKS.md](TASKS.md)。**
 > 🗺️ 運用マップ：https://claude.ai/artifact/QsTjpmQ7Q3oiLrFjBYgQqf （控え [docs/設計書_note運用会社.md](docs/設計書_note運用会社.md)）
-> 🧵 このリポジトリは Threads 運用会社として作り、2026-11-15 に note 運用会社へ作り替えました。Threads 版はタグ `threads-archive-2026-11-15` に残っています。
+> 🧵 このリポジトリは Threads 運用会社として作り、2026-11-15 に note 運用会社へ作り替えました。Threads 版はコミット `2efcc0f`（2026-11-15 の main。GitHub で `kiichi4268/-home-user-threads-ai-employees/tree/2efcc0f` を開くと見られる） に残っています。
 
 12人のAI社員が note の記事（タイトル・本文・画像）を作り、**Muse がブラウザで投稿する** ための指示書と手順書です。
 

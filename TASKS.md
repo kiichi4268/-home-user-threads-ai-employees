@@ -19,7 +19,7 @@
 
 | | ID | だれ | タスク | 終わりの目印 | メモ |
 |---|---|---|---|---|---|
-| [ ] | ★N-01 | 👤 | note 運用会社への作り替えの PR を Merge | main が note 版になる | Threads 版はタグ `threads-archive-2026-11-15` に残っている |
+| [ ] | ★N-01 | 👤 | note 運用会社への作り替えの PR を Merge | main が note 版になる | Threads 版はコミット `2efcc0f`（2026-11-15 の main。GitHub で `kiichi4268/-home-user-threads-ai-employees/tree/2efcc0f` を開くと見られる） に残っている |
 | [ ] | ★N-02 | 👤 | Drive の第1弾 v2 の共有リンクを Muse に貼る | Muse が下書きを作った | v1 のフォルダは名前に「使わない」を付けた |
 | [ ] | ★N-03 | 👤 | 予約投稿ができるか、Muse にエディタで確かめてもらう | できる／できないが決まる | |
 | [ ] | ★N-04 | 👤 | 下書きを最終確認 → Muse が公開 | 公開URL が出る | |
