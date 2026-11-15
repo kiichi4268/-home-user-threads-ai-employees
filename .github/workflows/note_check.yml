@@ -1,0 +1,19 @@
+# PR のたびに、note の記事の形と中身を確かめる（何も投稿しない。投稿は Muse が手動で行う）
+name: note_check
+on:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: テスト
+        run: |
+          python3 tools/content_rules.py
+          python3 tools/note_check.py --self-test
+      - name: 記事のチェック
+        run: python3 tools/note_check.py --check

@@ -1,0 +1,41 @@
+{
+  "id": "note_01_hitori",
+  "version": 2,
+  "type": "paid",
+  "title": "運動ブランクの社会人が、ひとりで行っても気まずくならないスポーツサークル入門",
+  "price_steps": [
+    {
+      "price": 500,
+      "until": "10部売れるまで"
+    },
+    {
+      "price": 980,
+      "until": "30部売れるまで"
+    },
+    {
+      "price": 1980,
+      "until": "以降（通常価格）"
+    }
+  ],
+  "hashtags": [
+    "#社会人サークル",
+    "#社会人スポーツ",
+    "#ひとり参加",
+    "#初心者歓迎",
+    "#運動不足解消",
+    "#バドミントン",
+    "#バレーボール",
+    "#卓球",
+    "#野球",
+    "#東京"
+  ],
+  "header_image": "images/01_header.png",
+  "body_images": [
+    "images/02_checklist.png",
+    "images/03_team_rules.png"
+  ],
+  "status": "Drive に v2 を入れた・PR の Merge 待ち（Merge のあとに Muse へ）",
+  "drive_folder": "https://drive.google.com/drive/folders/1CXU_ghHlTcqcBxJXICgl7m-6i4q7AMOZ",
+  "published_url": "",
+  "note": "v1（2026-11-15）から：未確認の実績「4種目・27回」と「運営のチーム分けルール」をやめ、シートの事実（参加者像・申込の流れ・当日の流れ・貸出）と公式LINEのURLを入れた"
+}
