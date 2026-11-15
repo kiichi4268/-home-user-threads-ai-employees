@@ -4,3 +4,5 @@ __pycache__/
 .DS_Store
 # ぼかす前の写真・動画は置かない（完成品だけを content/threads/media/ に）
 raw/
+# 有料エリアの本文は公開リポジトリに置かない（Google Drive にだけ置く）
+content/note/*/paid.txt
