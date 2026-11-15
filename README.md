@@ -6,9 +6,8 @@
 > 🧭 **中身のルールは [CLAUDE.md](CLAUDE.md)、受け渡しと公開の手順は [NOTE.md](NOTE.md)。** 新しいチャットでは「`CLAUDE.md` と `NOTE.md` を読んで、続きをお願い」と伝えるだけで続きができます。
 > ✅ **足りないタスクは [TASKS.md](TASKS.md)。**
 > 🗺️ 運用マップ：https://claude.ai/artifact/QsTjpmQ7Q3oiLrFjBYgQqf （控え [docs/設計書_note運用会社.md](docs/設計書_note運用会社.md)）
-> 🧵 このリポジトリは Threads 運用会社として作り、2026-11-15 に note 運用会社へ作り替えました。Threads 版はコミット `2efcc0f`（2026-11-15 の main。GitHub で `kiichi4268/-home-user-threads-ai-employees/tree/2efcc0f` を開くと見られる） に残っています。
 
-12人のAI社員が note の記事（タイトル・本文・画像）を作り、**Muse がブラウザで投稿する** ための指示書と手順書です。
+12人のAI社員が note の記事（タイトル・本文・画像）を作り、**Muse がブラウザで投稿する** ための指示書と手順書です。**週1回**稼働します。
 
 ## 1. 前提
 
@@ -50,7 +49,7 @@ Claude Code が作る ➔ note_check が OK ➔ Drive「他のSNS用」に記事
 ├── .github/workflows/note_check.yml   # PR のたびに記事を確かめる（何も投稿しない）
 ├── tools/
 │   ├── note_check.py             # 記事のチェック（タイトル・画像・参加費・URL・埋め残し・NG表現）
-│   ├── content_rules.py          # NG表現・参加費・日付と会場の照合（Threads 版から引き継ぎ）
+│   ├── content_rules.py          # NG表現・参加費・日付と会場の照合
 │   └── make_images_note01.py     # 第1弾の画像を作る（Pillow）
 ├── content/note/<id>/            # 記事ごと：meta.json・free.txt・images/（paid.txt は入れない）
 ├── data/note_weekly.csv          # 週の数字（ビュー・スキ・販売部数）
@@ -89,6 +88,5 @@ python3 tools/note_check.py --check
 python3 tools/content_rules.py
 ```
 
-## 8. GitHub の設定で加藤さんにお願いすること
-- Threads 用の Secrets（`THREADS_ACCESS_TOKEN`・`CHATWORK_API_TOKEN`・`WORDPRESS_TOKEN`）と Variables（`TH_ENABLED`・`TH_INSIGHTS_ENABLED`・`THREADS_TOKEN_EXPIRES`）は、もう使わない。消すかどうかは加藤さんが決める（ワークフローは消したので、残っていても動かない）。
-- リポジトリ名は `-home-user-threads-ai-employees` のまま。名前を変えるなら GitHub の Settings で（変えたら姉妹リポジトリのリンクも直す）。
+## 8. 週1回の稼働
+稼働日（仮に水曜21:00）に、先週の数字の記録 → 振り返り → 次の記事づくり → Drive → PR をまとめて行う。push はその1回だけ。詳しくは [NOTE.md](NOTE.md)「5.」。

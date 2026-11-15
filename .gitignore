@@ -2,7 +2,7 @@ __pycache__/
 .env
 .secrets.upload.env
 .DS_Store
-# ぼかす前の写真・動画は置かない（完成品だけを content/threads/media/ に）
+# ぼかす前の写真・動画は置かない（顔を隠した完成品だけを content/note/<id>/images/ に）
 raw/
 # 有料エリアの本文は公開リポジトリに置かない（Google Drive にだけ置く）
 content/note/*/paid.txt

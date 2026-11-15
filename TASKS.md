@@ -19,7 +19,7 @@
 
 | | ID | だれ | タスク | 終わりの目印 | メモ |
 |---|---|---|---|---|---|
-| [ ] | ★N-01 | 👤 | note 運用会社への作り替えの PR を Merge | main が note 版になる | Threads 版はコミット `2efcc0f`（2026-11-15 の main。GitHub で `kiichi4268/-home-user-threads-ai-employees/tree/2efcc0f` を開くと見られる） に残っている |
+| [ ] | ★N-01 | 👤 | note 運用会社への作り替えの PR を Merge | main が note 版になる | |
 | [ ] | ★N-02 | 👤 | Drive の第1弾 v2 の共有リンクを Muse に貼る | Muse が下書きを作った | v1 のフォルダは名前に「使わない」を付けた |
 | [ ] | ★N-03 | 👤 | 予約投稿ができるか、Muse にエディタで確かめてもらう | できる／できないが決まる | |
 | [ ] | ★N-04 | 👤 | 下書きを最終確認 → Muse が公開 | 公開URL が出る | |
@@ -30,10 +30,13 @@
 | | ID | だれ | タスク | 終わりの目印 | メモ |
 |---|---|---|---|---|---|
 | [ ] | ★N-10 | 👤🤖 | ゴール（2026年12月末に10部、2027年4月末に月40部・月8万円）でよいか | `docs/goals.md` の「案」が消える | |
-| [ ] | N-11 | 👤 | 週の数字（ビュー・スキ・販売部数）を伝えるのは Muse か加藤さんか | 担当が決まる | 月曜の朝までに |
+| [ ] | N-11 | 👤 | 週の数字（ビュー・スキ・販売部数）を伝えるのは Muse か加藤さんか | 担当が決まる | 稼働日までに |
 | [ ] | N-12 | 👤 | シート「イベント状況」の会場名を正式名称に直すか（CLAUDE.md「5.」） | どちらかに決まる | 直すなら `tools/content_rules.py` の VENUE_ACCESS も直す |
 | [ ] | N-13 | 👤 | シート「加藤からの修正・決定」に、11/15 の決定（note 運用会社にする・施設名は正式名称・Muse が投稿）を「媒体：note」で記録 | 行がある | Claude がシートに書けるなら Claude が書く |
 | [ ] | N-14 | 👤 | note 専用の公式LINEの入口（流入経路）を作るか | 作る／作らない | 作ると note からの友だち追加が測れる |
+| [ ] | N-15 | 👤 | 稼働日の曜日を決める（仮に水曜21:00） | NOTE.md「5.」の「仮」が消える | |
+| [ ] | N-16 | 👤 | GitHub の Settings → Secrets and variables → Actions から、もう使わない古い Secrets・Variables を消す | 一覧に note で使わないものが残っていない | 消してよいもの：`THREADS_ACCESS_TOKEN`・`CHATWORK_API_TOKEN`・`WORDPRESS_TOKEN`・`TH_ENABLED`・`TH_INSIGHTS_ENABLED`・`THREADS_TOKEN_EXPIRES`（ほかのリポジトリで使っていなければ） |
+| [ ] | N-17 | 👤 | リポジトリ名を note 用に変えるか（例：`macachette-note`）。Settings → General → Repository name | 名前が決まる | 変えたら README・CLAUDE.md・姉妹リポジトリのリンクを Claude が直す |
 
 ## C. 精度を上げる仕組み（Claude が作る）
 
